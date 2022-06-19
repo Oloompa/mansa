@@ -12,7 +12,7 @@
   "homepage": "https://github.com/MansaGroup/kanedama#readme",
   "devDependencies": {
     "@types/jest": "28.1.1",
-    "prettier": "2.6.2"
+    "prettier": "2.7.1"
   },
   "workspaces": [
     "backend",
