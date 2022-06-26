@@ -40,7 +40,8 @@
 |   1   |  [X]   | Fix configuration             |
 |   2   |  [ ]   | Add linter                    |
 |   3   |  [ ]   | Prepare new architecture      |
-|   4   |  [ ]   | Move code to new architecture |
+|   4   |  [ ]   | Add logger                    |
+|   5   |  [ ]   | Move code to new architecture |
 |   6   |  [ ]   | Fix bad features              |
 |   7   |  [ ]   | Add missing features          |
 |   8   |  [ ]   | Suggest improvements          |
@@ -79,6 +80,12 @@ I use conventional commit. To make me sure I respect the syntax each time i use 
 
 ### Prod ready required improvements
 
-- logging
+- logging (use a prod ready adapter)
 - tracing
--
+- CI/CD
+  - semantic versioning
+  - quality code check like [Sonar Cloud](https://sonarcloud.io/)
+  - auto test
+  - auto build
+  - auto deploy if everything is OK
+- use a professional email checker like [mailboxlayer](https://mailboxlayer.com/)
