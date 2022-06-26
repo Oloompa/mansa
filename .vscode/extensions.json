@@ -4,6 +4,7 @@
     "davidanson.vscode-markdownlint",
     "wix.vscode-import-cost",
     "streetsidesoftware.code-spell-checker",
-    "esbenp.prettier-vscode"
+    "esbenp.prettier-vscode",
+    "EditorConfig.EditorConfig"
   ]
 }
