@@ -20,5 +20,5 @@
     "declarationMap": true
   },
   "compileOnSave": true,
-  "exclude": ["**/test/*", "dist"]
+  "exclude": ["test", "dist"]
 }
