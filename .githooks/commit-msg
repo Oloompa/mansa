@@ -1,0 +1,46 @@
+#!/usr/bin/env bash
+
+# SETTINGS
+SCOPE_MAX_LENGTH=40
+TITLE_MAX_LENGTH=120
+TYPES=(build ci docs feat fix perf refactor revert style test)
+
+commitRegexp="^("
+# add type check
+for type in ${TYPES[@]}; do
+  commitRegexp="$commitRegexp$type|"
+done
+commitRegexp="${commitRegexp%|})"
+# add optional scope check
+commitRegexp="${commitRegexp}(\((.{1,${SCOPE_MAX_LENGTH}})\))?"
+# add optional breaking check
+commitRegexp="${commitRegexp}!?: "
+# add title check
+commitRegexp="${commitRegexp}(.{1,$TITLE_MAX_LENGTH})$"
+
+branchNameRegex="(.*)"
+
+mergeRegexp="^(Merge( remote-tracking)? branch '${branchNameRegex}'( of .*)? into ${branchNameRegex})$"
+
+# get first line of the commit message
+commit_file=$1
+commit_message=$(head -n1 $commit_file)
+
+# run check
+if [[ ! $commit_message =~ $commitRegexp && ! $commit_message =~ $mergeRegexp ]]; then
+  echo -e "\n\e[1;31m💥 Invalid Commit Message 💥\033[0m\e[0m\n"
+  echo -e "\e[37mActual commit message: \e[33m\"$commit_message\"\033[0m\n"
+  echo -e "-------- valid message format --------\e[36m"
+  echo -e "<type>[optional scope]: <description>\n"
+  echo -e "[optional body]\n"
+  echo -e "[optional footer(s)]\033[0m"
+  echo -e "--------------------------------------\n"
+  echo -e "valid types: \e[36m${TYPES[@]}\033[0m"
+  echo -e "max length (scope): \e[36m$SCOPE_MAX_LENGTH\033[0m"
+  echo -e "max length (title): \e[36m$TITLE_MAX_LENGTH\033[0m\n"
+  echo -e "\e[37mregex used: \e[33m$commitRegexp\033[0m"
+  echo -e "see https://www.conventionalcommits.org/en/v1.0.0/"
+
+  # exit with an error
+  exit 1
+fi
