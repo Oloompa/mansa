@@ -1,8 +1,24 @@
 {
   "compilerOptions": {
-    "target": "es5",
+    // behavior
+    "lib": ["ESNext"],
     "module": "commonjs",
-    "strict": false,
-    "outDir": "dist"
-  }
+    "moduleResolution": "node",
+    // safety
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "noImplicitReturns": true,
+    "noUnusedParameters": true,
+    // sugar
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    // output
+    "target": "ES2021",
+    "outDir": "dist",
+    "sourceMap": true,
+    "declaration": true,
+    "declarationMap": true
+  },
+  "compileOnSave": true,
+  "exclude": ["**/test/*", "dist"]
 }
