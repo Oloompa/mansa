@@ -23,9 +23,9 @@ A user can login with their email & password, if it's ok, their name will be ret
 
 a user must have a name, an email address, a password
 
-- the name must be alphanumeric charaters, its lenght must be in `[4, 50]`
-- the email address must contain alphanumeric charaters, a single `@` symbol, its length is `<` 256
-- the password must be alphanumeric charaters, its lenght must be in `[8, 255]`
+- the name must be alphanumeric characters, its length must be in `[4, 50]`
+- the email address must contain alphanumeric characters, a single `@` symbol, its length is `<` 256
+- the password must be alphanumeric characters, its length must be in `[8, 255]`
 
 We expect not to have duplicate names or email addresses among our users
 
