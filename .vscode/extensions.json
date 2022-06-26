@@ -1,0 +1,9 @@
+{
+  "recommendations": [
+    "amatiasq.sort-imports",
+    "davidanson.vscode-markdownlint",
+    "wix.vscode-import-cost",
+    "streetsidesoftware.code-spell-checker",
+    "esbenp.prettier-vscode"
+  ]
+}
