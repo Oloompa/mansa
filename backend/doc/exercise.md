@@ -57,7 +57,7 @@ Just in case you need one. By the way, we don't expect you to dockerize the appl
 
 ## Note to the candidate
 
-"prod-ready" can be a very time-consumming process and we don't expect you to spend too long on this test so
+"prod-ready" can be a very time-consuming process and we don't expect you to spend too long on this test so
 if you think about things that should be done but don't have the time, please write them down in the readme.
 
 ### Side note
