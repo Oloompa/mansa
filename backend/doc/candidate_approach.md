@@ -51,20 +51,20 @@
 | :---: | :----: | :---------------------------- |
 |   1   |  [X]   | Fix configuration             |
 |   2   |  [X]   | Add linter                    |
-|   3   |  [ ]   | Prepare new architecture      |
-|   4   |  [ ]   | Add logger                    |
-|   5   |  [ ]   | Move code to new architecture |
-|   6   |  [ ]   | Fix bad features              |
-|   7   |  [ ]   | Add missing features          |
-|   8   |  [ ]   | Suggest improvements          |
+|   3   |  [X]   | Prepare new architecture      |
+|   4   |  [X]   | Add logger                    |
+|   5   |  [⠀]   | Move code to new architecture |
+|   6   |  [⠀]   | Fix bad features              |
+|   7   |  [⠀]   | Add missing features          |
+|   8   |  [⠀]   | Suggest improvements          |
 
 ### Architecture
 
 | order | status | description |
 | :---: | :----: | :---------- |
-|   1   |  [ ]   | Folder tree |
-|   2   |  [ ]   | Logger      |
-|   3   |  [ ]   | Settings    |
+|   1   |  [⠀]   | Folder tree |
+|   2   |  [⠀]   | Logger      |
+|   3   |  [⠀]   | Settings    |
 
 ### Usecases
 
