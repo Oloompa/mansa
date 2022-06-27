@@ -17,6 +17,10 @@
   "scripts": {
     "pre-install": "git config core.hooksPath .githooks"
   },
+  "engines": {
+    "node": ">= 16.0.0",
+    "npm": ">= 7.0.0"
+  },
   "workspaces": [
     "backend",
     "frontend"
