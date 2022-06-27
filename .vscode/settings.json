@@ -18,9 +18,11 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "editor.codeActionsOnSave": {
-    // "source.fixAll.eslint": true,
+    "source.fixAll.wotan": true
   },
   "editor.formatOnSave": true, // to avoid formatting twice (we already have codeActionsOnSave)
   "editor.formatOnType": false, // just to be safe
-  "editor.formatOnPaste": false
+  "editor.formatOnPaste": false,
+  "cSpell.words": ["kanedama", "wotan"],
+  "typescript.tsdk": "node_modules/typescript/lib"
 }

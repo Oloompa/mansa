@@ -50,7 +50,7 @@
 | order | status | description                   |
 | :---: | :----: | :---------------------------- |
 |   1   |  [X]   | Fix configuration             |
-|   2   |  [ ]   | Add linter                    |
+|   2   |  [X]   | Add linter                    |
 |   3   |  [ ]   | Prepare new architecture      |
 |   4   |  [ ]   | Add logger                    |
 |   5   |  [ ]   | Move code to new architecture |

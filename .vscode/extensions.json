@@ -5,6 +5,7 @@
     "wix.vscode-import-cost",
     "streetsidesoftware.code-spell-checker",
     "esbenp.prettier-vscode",
-    "EditorConfig.EditorConfig"
+    "editorconfig.editorconfig",
+    "fimbullinter.vscode-plugin"
   ]
 }

@@ -3,7 +3,9 @@
     "build": "tsc --build ./tsconfig.json",
     "start": "npm run build && node ./dist",
     "build:watch": "tsc --build -w ./tsconfig.json",
-    "start:node": "nodemon ./dist/index.js"
+    "start:node": "nodemon ./dist/index.js",
+    "lint": "wotan -p tsconfig.json -c ../.wotanrc.yaml",
+    "lint:fix": "wotan -p tsconfig.json -c ../.wotanrc.yaml --fix"
   },
   "dependencies": {
     "@types/node": "17.0.31",
