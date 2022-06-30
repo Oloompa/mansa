@@ -1,0 +1,17 @@
+{
+  "version": "2.0.0",
+  "autoClearConsole": true,
+  "tasks": [
+    {
+      "label": "run backend unit tests",
+      "type": "shell",
+      "command": "npm run test:unit -w backend",
+      "options": {
+        "shell": {
+          "args": []
+        }
+      },
+      "problemMatcher": ["$tsc"]
+    }
+  ]
+}

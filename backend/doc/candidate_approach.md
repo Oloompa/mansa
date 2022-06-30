@@ -47,16 +47,14 @@
 
 ## Actions and progress
 
-| order | status | description                   |
-| :---: | :----: | :---------------------------- |
-|   1   |  [X]   | Fix configuration             |
-|   2   |  [X]   | Add linter                    |
-|   3   |  [X]   | Prepare new architecture      |
-|   4   |  [X]   | Add logger                    |
-|   5   |  [⠀]   | Move code to new architecture |
-|   6   |  [⠀]   | Fix bad features              |
-|   7   |  [⠀]   | Add missing features          |
-|   8   |  [⠀]   | Suggest improvements          |
+| order | status | description                     |
+| :---: | :----: | :------------------------------ |
+|   1   |  [X]   | Fix configuration               |
+|   2   |  [X]   | Add linter                      |
+|   3   |  [X]   | Prepare new architecture        |
+|   4   |  [X]   | Add logger                      |
+|   5   |  [⠀]   | Implement features from scratch |
+|   6   |  [⠀]   | Suggest improvements            |
 
 ### Architecture
 
@@ -101,6 +99,16 @@ up to me
 
 ## Details
 
+### Commit lint
+
+I use conventional commit because:
+
+- standardisation is good in computing
+- commit messages are more readable
+- it allow us to use semantic versioning later
+
+To make me sure I respect the syntax each time i use a git hook i developed in past.
+
 ### Dependencies choice
 
 Here is the list of my criteria when i choose a dependency:
@@ -125,26 +133,36 @@ I love to have blazing fast test execution. It allow me to run all my unit tests
 
 In future i will take a look to the coming [native nodejs test library](https://nodejs.org/api/test.html)
 
-### Architecture
+### Implementation
 
-### Commit lint
+I use port and adapters pattern in order to:
 
-I use conventional commit. To make me sure I respect the syntax each time i use a hook i developed in past.
+- make the brain of app independent of any framework / presenter / infrastructure choice
+- to allow us to easily test the app
+- to allow us to refactor app without the need of rewrite tests
+
+I make the choice to rewrite the app from scratch rather than adapt it because:
+
+- code base is currently very light (main reason)
+- there is no test
+- code base is really bad and full of bugs
 
 ### Prod ready required improvements
 
 - logging (use a prod ready adapter)
 - tracing
 - CI/CD
-  - semantic versioning
   - quality code check like [Sonar Cloud](https://sonarcloud.io/)
-  - auto test
-  - auto build
-  - auto deploy if everything is OK
+  - semantic versioning
+  - test
+  - build
+  - deploy if everything is OK
+- monitoring
 - use a professional email checker like [mailboxlayer](https://mailboxlayer.com/)
 - add session management
 - add permission management
-- encrypt the password
+- encrypt the password...
+- switch typescript config to [project reference](https://www.typescriptlang.org/docs/handbook/project-references.html) in order to increase build speed (and immediate test running) (by side effect)
 
 ### Bonus
 

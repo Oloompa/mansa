@@ -2,11 +2,11 @@ import { LOG_LEVEL, LogLevel, Logger } from '../../core/ports/library/logger';
 
 import mergeDeep from 'merge-deep';
 
-export class SimpleJsonLogger implements Logger {
+export class JsonLogger implements Logger {
   constructor(readonly metadata: object) {}
 
   getChild(metadata: object): Logger {
-    return new SimpleJsonLogger(mergeDeep(this.metadata, metadata));
+    return new JsonLogger(mergeDeep(this.metadata, metadata));
   }
 
   trace(message: string): void {
@@ -35,6 +35,7 @@ export class SimpleJsonLogger implements Logger {
       message,
       metadata: this.metadata,
       stack,
+      pid: process.pid,
     });
   }
 }

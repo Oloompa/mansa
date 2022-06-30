@@ -1,24 +1,8 @@
 {
+  "extends": "../tsconfig.base.json",
   "compilerOptions": {
-    // behavior
-    "lib": ["ESNext"],
-    "module": "commonjs",
-    "moduleResolution": "node",
-    // safety
-    "strict": true,
-    "forceConsistentCasingInFileNames": true,
-    "noImplicitReturns": true,
-    "noUnusedParameters": true,
-    // sugar
-    "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
-    // output
-    "target": "ES2021",
     "outDir": "dist",
-    "sourceMap": true,
-    "declaration": true,
-    "declarationMap": true
-  },
-  "compileOnSave": true,
-  "exclude": ["test", "dist"]
+    "rootDir": ".",
+    "lib": ["ESNext"]
+  }
 }

@@ -23,6 +23,10 @@
   "editor.formatOnSave": true, // to avoid formatting twice (we already have codeActionsOnSave)
   "editor.formatOnType": false, // just to be safe
   "editor.formatOnPaste": false,
-  "cSpell.words": ["kanedama", "wotan"],
-  "typescript.tsdk": "node_modules/typescript/lib"
+  "cSpell.words": ["kanedama", "wotan", "zora"],
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "triggerTaskOnSave.restart": true,
+  "triggerTaskOnSave.tasks": {
+    "run backend unit tests": ["backend/**/*.ts"]
+  }
 }
