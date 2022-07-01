@@ -1,9 +1,11 @@
+import { ClientError } from './client_error';
+
 type ValidationError = {
   label: string;
   description: string;
 };
 
-export class ValidationErrors extends Error {
+export class ValidationErrors extends ClientError {
   private details: ValidationError[] = [];
 
   constructor() {

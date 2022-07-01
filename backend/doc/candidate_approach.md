@@ -54,15 +54,9 @@
 |   3   |  [X]   | Prepare new architecture        |
 |   4   |  [X]   | Add logger                      |
 |   5   |  [⠀]   | Implement features from scratch |
+|  5.1  |  [⠀]   | Implement registration          |
+|  5.1  |  [⠀]   | Implement login                 |
 |   6   |  [⠀]   | Suggest improvements            |
-
-### Architecture
-
-| order | status | description |
-| :---: | :----: | :---------- |
-|   1   |  [⠀]   | Folder tree |
-|   2   |  [⠀]   | Logger      |
-|   3   |  [⠀]   | Settings    |
 
 ### Usecases
 
@@ -135,7 +129,7 @@ In future i will take a look to the coming [native nodejs test library](https://
 
 ### Implementation
 
-I use port and adapters pattern in order to:
+I used port and adapters pattern in order to:
 
 - make the brain of app independent of any framework / presenter / infrastructure choice
 - to allow us to easily test the app
@@ -146,6 +140,12 @@ I make the choice to rewrite the app from scratch rather than adapt it because:
 - code base is currently very light (main reason)
 - there is no test
 - code base is really bad and full of bugs
+
+I used TDD to easily get the "minimal" required code to address business rules.
+
+#### Validation
+
+I think validation of data should move on domain part. But i am not sure of the good way to do it.
 
 ### Prod ready required improvements
 
@@ -161,17 +161,31 @@ I make the choice to rewrite the app from scratch rather than adapt it because:
 - use a professional email checker like [mailboxlayer](https://mailboxlayer.com/)
 - add session management
 - add permission management
-- encrypt the password...
-- switch typescript config to [project reference](https://www.typescriptlang.org/docs/handbook/project-references.html) in order to increase build speed (and immediate test running) (by side effect)
+- encrypt the password
+- switch typescript config to [project reference](https://www.typescriptlang.org/docs/handbook/project-references.html) in order to increase build speed (and immediate test running speed) (by side effect)
+- add sign-out feature
+
+### Suggestions
+
+- Allow multiple users with same name. In real life homonyms exists.
+- Your email validation rule is not correct. It will accept wrong emails and refuse legit ones.
+- Don't limit password max length ...
+- and allow all characters
+- but ask for longer passwords ...
+- and refuse too weak passwords or passwords already known by dictionaries.
 
 ### Bonus
 
 I corrected some errors in your markdown:
 
-- spelling errors
+- spelling errors => you should use a spell extension
   - `charaters`
   - `lenght`
   - `consumming`
-- linter errors
+- lint errors => there are also linters for markdown
   - spaces
   - same head title used two times
+
+### Conclusion
+
+There was too much issues. I am pretty sure i forgot something.
