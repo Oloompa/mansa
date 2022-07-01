@@ -43,7 +43,7 @@ export class RegisterUseCase {
       checkMaxLength('password', password, 50, validationErrors);
       if (validationErrors.isPopulated()) throw validationErrors;
 
-      const nameExists = (await this.userRepository.read(name)) !== null;
+      const nameExists = (await this.userRepository.readByName(name)) !== null;
       if (nameExists) throw new ConflictError('Username already exists.');
       const emailExists = (await this.userRepository.readByEmail(email)) !== null;
       if (emailExists) throw new ConflictError('Email already exists.');
