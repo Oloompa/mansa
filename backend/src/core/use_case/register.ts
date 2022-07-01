@@ -13,7 +13,6 @@ export class RegisterUseCase {
   constructor(private readonly logger: Logger, private readonly userRepository: UserRepository) {}
 
   async register(name: string, email: string, password: string): Promise<void> {
-    // wotan-disable-next-line no-useless-try-catch
     try {
       const validationErrors = new ValidationErrors();
 

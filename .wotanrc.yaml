@@ -1,1 +1,3 @@
 extends: wotan:recommended
+rules:
+  no-useless-try-catch: 'off'
