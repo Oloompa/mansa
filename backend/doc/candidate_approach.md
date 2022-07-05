@@ -132,6 +132,7 @@ I think validation of data should move on domain part. But i am not sure of the 
 - switch typescript config to [project reference](https://www.typescriptlang.org/docs/handbook/project-references.html) in order to increase build speed (and immediate test running speed) (by side effect)- add HTTP logs
 - add sign-out feature
 - answer 405 instead of 404 when method do not exist for a path - fastify does not seem to respect HTTP codes.
+- implement PostreSQL adapter
 
 ### Suggestions
 

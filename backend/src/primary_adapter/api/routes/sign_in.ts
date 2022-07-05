@@ -10,32 +10,22 @@ const userSchema = {
     email: { type: 'string' },
     password: { type: 'string' },
   },
-  required: ['name', 'email', 'password'],
+  required: ['email', 'password'],
 } as const;
 
 export function signInRoute(fastify: FastifyInstance) {
   fastify.post<{ Body: FromSchema<typeof userSchema> }>(
-    '/sign-up',
+    '/sign-in',
     {
       schema: {
         body: userSchema,
-        response: {
-          200: {
-            type: 'string',
-          },
-          400: {
-            type: 'object',
-          },
-          409: {
-            type: 'string',
-          },
-        },
       },
     },
     async (request, reply) => {
       try {
         const { email, password } = request.body;
         const name = await loginUseCase.login(email, password);
+        if (name === null) return await reply.code(401).send();
         return await reply.code(200).send(name);
       } catch (exception) {
         if (exception instanceof ValidationErrors) {

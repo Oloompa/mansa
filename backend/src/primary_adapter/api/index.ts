@@ -1,7 +1,8 @@
 import { fastify } from 'fastify';
+import { initOnResponseHook } from './hook/on_request';
 import { logger } from './config/local_config';
 import { pingRoute } from './routes/ping';
-// import { signInRoute } from './routes/sign_in';
+import { signInRoute } from './routes/sign_in';
 import { signUpRoute } from './routes/sign_up';
 
 const PORT = 3000;
@@ -14,7 +15,9 @@ server.get('/', async (_request: any, _reply: any) => {
 
 pingRoute(server);
 signUpRoute(server);
-// signInRoute(server);
+signInRoute(server);
+
+initOnResponseHook(server, logger);
 
 (async () => {
   try {

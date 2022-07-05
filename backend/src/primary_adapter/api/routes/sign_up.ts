@@ -20,30 +20,19 @@ export function signUpRoute(fastify: FastifyInstance) {
     {
       schema: {
         body: userSchema,
-        response: {
-          201: {
-            type: 'string',
-          },
-          400: {
-            type: 'object',
-          },
-          409: {
-            type: 'string',
-          },
-        },
       },
     },
     async (request, reply) => {
       try {
         const { name, email, password } = request.body;
         await registerUseCase.register(name, email, password);
-        return await reply.code(201);
+        return await reply.code(201).send();
       } catch (exception) {
         if (exception instanceof ValidationErrors) {
-          await reply.code(400).send(exception.getErrors());
+          return reply.code(400).send(exception.getErrors());
         }
         if (exception instanceof ConflictError) {
-          await reply.code(409).send(exception.message);
+          return reply.code(409).send(exception.message);
         }
         if (exception instanceof Error) {
           return reply.code(500).send(exception.message);
