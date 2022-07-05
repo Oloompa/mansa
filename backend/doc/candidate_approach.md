@@ -135,6 +135,7 @@ I think validation of data should move on domain part. But i am not sure of the 
 - implement PostreSQL adapter
 - auto document API
 - add integration test
+- inject config in API rather than import it
 
 ### Suggestions
 
