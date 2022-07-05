@@ -133,6 +133,8 @@ I think validation of data should move on domain part. But i am not sure of the 
 - add sign-out feature
 - answer 405 instead of 404 when method do not exist for a path - fastify does not seem to respect HTTP codes.
 - implement PostreSQL adapter
+- auto document API
+- add integration test
 
 ### Suggestions
 

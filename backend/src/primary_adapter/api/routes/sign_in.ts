@@ -31,9 +31,6 @@ export function signInRoute(fastify: FastifyInstance) {
         if (exception instanceof ValidationErrors) {
           return reply.code(400).send(exception.getErrors());
         }
-        if (exception instanceof ConflictError) {
-          return reply.code(409).send(exception.message);
-        }
         if (exception instanceof Error) {
           return reply.code(500).send(exception.message);
         }
