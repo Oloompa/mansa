@@ -8,7 +8,11 @@ Please look [there](doc/exercise.md) to see the previous content of markdown (wi
 
 Please look [there](doc/candidate_approach.md) to see how I handled the exercise.
 
+Please look [there](doc/API.md) to see how the API works.
+
 ## Requirements
+
+Fulfill root package.json requirements for Node.JS and NPM versions. [NVM](https://github.com/nvm-sh/nvm) is your friend.
 
 ## Install deps
 
@@ -39,11 +43,11 @@ npm start
 From root level of monorepo
 
 ```bash
-npm test -w backend
+npm test:unit -w backend
 ```
 
 From backend workspace
 
 ```bash
-npm test
+npm test:unit
 ```
