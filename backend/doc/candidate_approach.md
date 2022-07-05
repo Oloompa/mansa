@@ -58,39 +58,6 @@
 |  5.1  |  [⠀]   | Implement login                 |
 |   6   |  [⠀]   | Suggest improvements            |
 
-### Usecases
-
-#### Registration
-
-name + valid email + valid password
-
-#### Authentication
-
-email + password
-OK => return name
-KO => return validation error list
-
-### Data
-
-#### User
-
-name alphanumeric with length in `[4, 50]` and UNIQUE
-email contains alphanumeric, a single @ and length < 256 and UNIQUE
-password alphanumeric with length in `[4, 50]`
-
-### Logs
-
-JSON
-
-### Errors handling
-
-up to me
-
-### API
-
-/healthz
-=> respond 200 (with)
-
 ## Details
 
 ### Commit lint
@@ -162,8 +129,9 @@ I think validation of data should move on domain part. But i am not sure of the 
 - add session management
 - add permission management
 - encrypt the password
-- switch typescript config to [project reference](https://www.typescriptlang.org/docs/handbook/project-references.html) in order to increase build speed (and immediate test running speed) (by side effect)
+- switch typescript config to [project reference](https://www.typescriptlang.org/docs/handbook/project-references.html) in order to increase build speed (and immediate test running speed) (by side effect)- add HTTP logs
 - add sign-out feature
+- answer 405 instead of 404 when method do not exist for a path - fastify does not seem to respect HTTP codes.
 
 ### Suggestions
 
